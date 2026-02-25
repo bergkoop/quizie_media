@@ -1,0 +1,19 @@
+body {
+background-color: white;
+padding: 0;
+margin: 0;
+}
+.header{
+    background-color: #4169e1;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: sticky, top;
+}
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #4169e1;
+    color: white;
+    margin-top: 558.5px;
+}
