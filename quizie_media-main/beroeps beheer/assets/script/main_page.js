@@ -2,24 +2,27 @@
 window.addEventListener('DOMContentLoaded', () => {
     const overlay = document.getElementById('welcome-overlay');
     const startButton = document.getElementById('start-button');
+    const gastButton = document.getElementById('gast');
 
+    // Handle "Start" button click (requires username)
     startButton.addEventListener('click', () => {
-        const username = document.getElementById('username').value;
+        const usernameInput = document.getElementById('username');
+        const username = usernameInput.value;
         if (username.trim() !== '') {
             // Save to localStorage
             localStorage.setItem('username', username);
-
-            // Simulate saving to JSON
-            const userData = {
-                username: username,
-                loginTime: new Date().toISOString()
-            };
-            console.log(JSON.stringify(userData));
-
             // Hide the overlay
             overlay.style.display = 'none';
         } else {
-            alert('Voer alstublieft uw naam in.');
+            // Show error message in input field
+            usernameInput.classList.add('error');
+            usernameInput.placeholder = 'graag uw naam invoeren';
         }
+    });
+
+    // Handle "doe als gast" (play as guest) button click
+    gastButton.addEventListener('click', () => {
+        // Hide the overlay - user can access without login
+        overlay.style.display = 'none';
     });
 });
