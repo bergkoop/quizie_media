@@ -17,33 +17,36 @@ footer {
     padding: 1rem;
     background-color: #4169e1;
     color: white;
-    margin-top: 181px;
+    margin-top: 131px;
     height: 50px;
 }
 .card {
     background-color: #f0f0f0;
-    border: 1px solid #ccc;
+    border: 1px solid #000;
     border-radius: 8px;
     text-align: center;
     padding: 1rem;
     text-decoration: none;
     color: #000;
     font-weight: bold;
-    height: 100px; /* Adjusted height to accommodate images */
+    height: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 400px;   
-    margin-left: 280px;
+    margin-left: 340px;
     margin-top: 150px;
     align-items: center;
 }
 .card:hover {
+    transition: ease-in;
+    transition-duration: 0.5s;
     background-color: #ffa500;
     color: #fff;
     text-decoration: underline;
     cursor: pointer;
+    border-color: #4169e1;
 }
 .answer-grid{
     display: grid;
@@ -53,4 +56,19 @@ footer {
 }
 .vraag1 {
     text-align: center;
+}
+.button {
+    width: 100px;
+    height: 50px;
+    align-self: center;
+    border: 1px solid #000;
+}
+.button:hover {
+    transition: ease-in;
+    transition-duration: 0.5s;
+    background-color: #ffa500;
+    color: #fff;
+    cursor: pointer;
+    border-color: #4169e1;
+    border-radius: 5px;
 }
