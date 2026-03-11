@@ -17,7 +17,7 @@ footer {
     padding: 1rem;
     background-color: #4169e1;
     color: white;
-    margin-top: 31px;
+    margin-top: 181px;
     height: 50px;
 }
 .card {
@@ -29,14 +29,15 @@ footer {
     text-decoration: none;
     color: #000;
     font-weight: bold;
-    height: 200px; /* Adjusted height to accommodate images */
+    height: 100px; /* Adjusted height to accommodate images */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 400px;
-    margin-left: 150px;
-    margin-top: 500px;
+    width: 400px;   
+    margin-left: 280px;
+    margin-top: 150px;
+    align-items: center;
 }
 .card:hover {
     background-color: #ffa500;
@@ -46,7 +47,7 @@ footer {
 }
 .answer-grid{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 2fr);
     gap: 1rem;
     padding: 2rem;
 }
