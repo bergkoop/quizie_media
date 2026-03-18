@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultaat - Online Communicatie</title>
+    <link rel="stylesheet" href="/quizie_media-main/beroeps beheer/assets/OC-stylesheet/style.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="title">QUIZZIE: Mediawijsheid</h1>
+        <p class="subonderwerp">Quizzie subonderwerp: online communicatie</p>
+    </header>
+    <main style="text-align: center; padding: 2rem;">
+        <h1 id="score-text">Gefeliciteerd!</h1>
+        <p id="score-detail"></p>
+        <p id="username-display"></p>
+        <button onclick="window.location.href='../index.html'" style="margin-top: 2rem; padding: 1rem 2rem; font-size: 1.2rem; background: #4169e1; color: white; border: none; border-radius: 5px; cursor: pointer;">Terug naar home</button>
+    </main>
+    <footer class="footer"></footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const score = localStorage.getItem('score_online_communicatie');
+            const username = localStorage.getItem('username') || 'Gast';
+            const scoreEl = document.getElementById('score-text');
+            const detailEl = document.getElementById('score-detail');
+            const userEl = document.getElementById('username-display');
+
+            if (score !== null) {
+                scoreEl.textContent = `Je score: ${score}/10`;
+                detailEl.textContent = score >= 8 ? 'Uitstekend!' : score >= 6 ? 'Goed gedaan!' : score >= 4 ? 'Niet slecht, probeer opnieuw!' : 'Oefen nog wat!';
+            } else {
+                scoreEl.textContent = 'Geen score gevonden';
+            }
+            userEl.textContent = `Speler: ${username}`;
+        });
+    </script>
+</body>
+</html>

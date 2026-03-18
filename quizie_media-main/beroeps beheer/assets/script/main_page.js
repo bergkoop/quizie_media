@@ -1,28 +1,40 @@
-// Welcome Overlay Logic
 window.addEventListener('DOMContentLoaded', () => {
     const overlay = document.getElementById('welcome-overlay');
+    const usernameInput = document.getElementById('username');
     const startButton = document.getElementById('start-button');
     const gastButton = document.getElementById('gast');
 
-    // Handle "Start" button click (requires username)
+    // New: Check if on quiz page and username already set
+    const isQuizPage = window.location.pathname.includes('/quizzes/member-1-online_communicatie/');
+    const savedUsername = localStorage.getItem('username');
+    
+    if (isQuizPage && savedUsername) {
+        // Prefill and auto-hide overlay
+        usernameInput.value = savedUsername;
+        overlay.style.display = 'none';
+        return; // Skip rest for quiz pages
+    }
+
+    // Existing logic for index.html or no saved name
+    // Handle "Start" button click
     startButton.addEventListener('click', () => {
-        const usernameInput = document.getElementById('username');
-        const username = usernameInput.value;
-        if (username.trim() !== '') {
-            // Save to localStorage
+        const username = usernameInput.value.trim();
+        if (username !== '') {
             localStorage.setItem('username', username);
-            // Hide the overlay
             overlay.style.display = 'none';
         } else {
-            // Show error message in input field
             usernameInput.classList.add('error');
             usernameInput.placeholder = 'graag uw naam invoeren';
         }
     });
 
-    // Handle "doe als gast" (play as guest) button click
+    // Handle "doe als gast"
     gastButton.addEventListener('click', () => {
-        // Hide the overlay - user can access without login
         overlay.style.display = 'none';
     });
+
+    // Optional: Prefill if saved (even on index)
+    if (savedUsername) {
+        usernameInput.value = savedUsername;
+    }
 });
